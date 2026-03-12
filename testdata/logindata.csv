@@ -1,0 +1,3 @@
+testName,email,password,expected
+Valid login,automationdemo@gmail.com,Automation123,success
+Invalid login,automationdemo@gmail.com,Automationtest,failure

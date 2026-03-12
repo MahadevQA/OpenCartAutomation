@@ -1,0 +1,7 @@
+Unable to click logout link: Error: locator.click: Error: strict mode violation: locator('a:has-text(\'Logout\')') resolved to 2 elements:
+    1) <a href="https://tutorialsninja.com/demo/index.php?route=account/logout">Logout</a> aka locator('#top-links').getByText('Logout')
+    2) <a class="list-group-item" href="https://tutorialsninja.com/demo/index.php?route=account/logout">Logout</a> aka getByRole('link', { name: 'Logout' })
+
+Call log:
+  - waiting for locator('a:has-text(\'Logout\')')
+

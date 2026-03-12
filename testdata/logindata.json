@@ -1,0 +1,16 @@
+[
+    {
+        "testName":"Valid login",
+        "email":"automationdemo@gmail.com",
+        "password":"Automation123",
+        "expected":"success"
+
+    },
+    {
+        "testName":"Invalid login",
+        "email":"automationdemo@gmail.com",
+        "password":"Automationtest",
+        "expected":"failure"
+
+    }
+]
