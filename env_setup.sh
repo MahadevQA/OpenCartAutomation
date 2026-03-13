@@ -22,6 +22,14 @@ npx playwright install --with-deps
 echo -e "${GREEN}✅ Browsers installed.${NC}"
 echo ""
 
+# ✅ ADD ALLURE CLEAN HERE
+echo -e "${YELLOW}🧹 Cleaning old Allure results...${NC}"
+rm -rf allure-results
+rm -rf allure-report
+mkdir -p allure-results
+echo -e "${GREEN}✅ Old Allure results cleaned.${NC}"
+echo ""
+
 echo -e "${YELLOW}🧪 Running Playwright tests...${NC}"
 
 if [ -z "$script" ]
