@@ -24,20 +24,14 @@ echo ""
 
 echo -e "${YELLOW}🧪 Running Playwright tests...${NC}"
 
-if [ -z "$1" ]
+if [ -z "$script" ]
 then
-  echo "Running default test suite (test:master)..."
+  echo "Running default suite: test:master"
   npm run test:master
 else
-  echo "Running npm script: $1"
-  npm run $1
+  echo "Running selected suite: $script"
+  npm run $script
 fi
 
 echo -e "${GREEN}✅ Test execution completed.${NC}"
 echo ""
-
-echo -e "${BLUE}"
-echo "==============================================="
-echo "     🎉 CI EXECUTION COMPLETED 🎉"
-echo "==============================================="
-echo -e "${NC}"
