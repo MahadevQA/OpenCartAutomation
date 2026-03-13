@@ -24,14 +24,13 @@ echo ""
 
 echo -e "${YELLOW}🧪 Running Playwright tests...${NC}"
 
-# If argument passed, run that. Otherwise run all.
 if [ -z "$1" ]
 then
-  echo "Running ALL tests..."
-  npx playwright test
+  echo "Running default test suite (test:master)..."
+  npm run test:master
 else
-  echo "Running specific tests: $1"
-  npx playwright test $1
+  echo "Running npm script: $1"
+  npm run $1
 fi
 
 echo -e "${GREEN}✅ Test execution completed.${NC}"
