@@ -1,9 +1,0 @@
-Exception occurred while clicking 'Order History': Error: locator.click: Error: strict mode violation: locator('a:has-text(\'Order History\')') resolved to 4 elements:
-    1) <a href="https://tutorialsninja.com/demo/index.php?route=account/order">Order History</a> aka locator('#top-links').getByRole('link', { name: 'Order History' })
-    2) <a href="https://tutorialsninja.com/demo/index.php?route=account/order">View your order history</a> aka getByRole('link', { name: 'View your order history' })
-    3) <a class="list-group-item" href="https://tutorialsninja.com/demo/index.php?route=account/order">Order History</a> aka locator('#column-right').getByRole('link', { name: 'Order History' })
-    4) <a href="https://tutorialsninja.com/demo/index.php?route=account/order">Order History</a> aka getByRole('contentinfo').getByRole('link', { name: 'Order History' })
-
-Call log:
-  - waiting for locator('a:has-text(\'Order History\')')
-

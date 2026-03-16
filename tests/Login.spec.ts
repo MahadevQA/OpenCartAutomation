@@ -47,7 +47,7 @@ test("User login with Invalid test data",{tag:['@master','@sanity','@regression'
     await homePage.clickLogin()
 
     // Enter valid data and log in
-    await loginPage.enterEmail(config.invalidemail)
+    await loginPage.enterEmail(config.email)
     await loginPage.enterPassword(config.invalidpassword)
     await loginPage.clickLoginBtn()
 
