@@ -6,11 +6,22 @@ export class SearchResultsPage{
     private readonly page:Page
     private readonly searchPageHeader:Locator
     private readonly searchProduct:Locator
+    private readonly productNotDisplyMsg:Locator
+    private readonly listViewBtn:Locator
+    private readonly gridViewBtn:Locator
+    private readonly allProductCountForGridView:Locator
+    private readonly allProductCountForListView:Locator
 
     constructor(page:Page){
         this.page = page
         this.searchPageHeader = page.locator("#content h1")
         this.searchProduct = page.locator("h4>a")
+        this.productNotDisplyMsg = page.locator("#content p").last()
+        this.listViewBtn = page.locator("#list-view")
+        this.gridViewBtn = page.locator("#grid-view")
+        this.allProductCountForGridView = page.locator(".product-layout.product-grid")
+        this.allProductCountForListView = page.locator(".product-layout.product-list")
+
     }
 
 
@@ -62,4 +73,33 @@ export class SearchResultsPage{
     {
         return await this.searchProduct.count()
     }
+
+    async VerifyProductNotDisplayMsgAfterSearch():Promise<boolean>
+    {
+        try{
+            return await this.productNotDisplyMsg.isVisible()
+        }catch(error){
+            console.log(`Message not displayed with error: ${error}`)
+            return false
+        }
+    }
+
+    async SelectGridView(){
+        await this.gridViewBtn.click()
+    }
+
+    async SelectListView(){
+        await this.listViewBtn.click()
+    }
+
+    async getCountOfProductForGridOrList(view:string="list")
+    {
+        if(view.toLowerCase()==="list"){
+            return (await this.allProductCountForListView.all()).length
+        }
+        else if(view.toLowerCase()==="grid"){
+            return (await this.allProductCountForGridView.all()).length
+        }
+    }
+
 }

@@ -10,6 +10,9 @@ export class ProductPage{
     private readonly cnfMsg:Locator
     private readonly btnItmes:Locator
     private readonly linkViewCart:Locator
+    private readonly wishListBtn:Locator
+    private readonly compareProductBtn:Locator
+    private readonly compareProductLink:Locator
 
     constructor(page:Page){
         this.page = page
@@ -18,6 +21,10 @@ export class ProductPage{
         this.cnfMsg = page.locator(".alert.alert-success.alert-dismissible")
         this.btnItmes = page.locator("#cart")
         this.linkViewCart = page.locator("strong:has-text('View Cart')")
+        this.wishListBtn = page.locator(".btn-group button[data-original-title='Add to Wish List']")
+        this.compareProductBtn = page.locator("button[data-original-title='Compare this Product']").first()
+        this.compareProductLink = page.locator("a:has-text('product comparison')")
+
     }
 
     async setQuantity(qty:string):Promise<void>
@@ -60,5 +67,24 @@ export class ProductPage{
     {
         await this.linkViewCart.click()
         return new ShoppingCartPage(this.page)
+    }
+
+    async clickOnWishList()
+    {
+        await this.wishListBtn.click()
+    }
+
+    async clickOnCompareProductBtn(){
+        await this.compareProductBtn.click()
+    }
+
+    async verifySuccMsgAndClickOnCompareLink(){
+        const msg = await this.isConfirmationMsgVisible()
+        if(msg){
+            await this.compareProductLink.click()
+        }
+        else{
+            console.log("Compare Product link not displayed...")
+        }
     }
 }

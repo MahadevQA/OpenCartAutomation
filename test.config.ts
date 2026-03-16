@@ -15,6 +15,8 @@ export class TestConfig{
     // products details
 
     productName = "MacBook"
+    notExistingProductName = "Fitbit"
+    productNameforWishList = "iMac"
     productQuantity = "2"
     totalPrice = "$1,204.00"
 
@@ -31,4 +33,6 @@ export class TestConfig{
     country = 'India'
     regionOrState = 'Devon'
     textMessage = "Welcome"
+    updatecountry = "United States"
+    updateregionOrState = "Alaska"
 }

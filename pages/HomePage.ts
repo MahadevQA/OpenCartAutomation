@@ -9,6 +9,11 @@ export class HomePage{
     private readonly linkLogin:Locator
     private readonly txtSearchbox:Locator
     private readonly btnSearch:Locator
+    private readonly btnWishList:Locator
+    private readonly linkOrderHistory:Locator
+    private readonly linkTrasanction:Locator
+    private readonly linkDownload:Locator
+    private readonly linkLogout:Locator
 
 
     constructor(page:Page){
@@ -18,6 +23,11 @@ export class HomePage{
         this.linkLogin = page.locator("a:has-text('Login')")
         this.txtSearchbox = page.locator("input[placeholder='Search']")
         this.btnSearch = page.locator("#search button[type='button']")
+        this.btnWishList = page.locator("#wishlist-total")
+        this.linkOrderHistory = page.locator(".dropdown-menu.dropdown-menu-right li a:has-text('Order History')")
+        this.linkTrasanction = page.locator(".dropdown-menu.dropdown-menu-right li a:has-text('Transactions')")
+        this.linkDownload = page.locator(".dropdown-menu.dropdown-menu-right li a:has-text('Downloads')")
+        this.linkLogout = page.locator(".dropdown-menu.dropdown-menu-right li a:has-text('Logout')")
     }
 
     // Check if Home page exists
@@ -75,6 +85,56 @@ export class HomePage{
             await this.btnSearch.click()
         }catch(error){
             console.log(`Exception occurred while clicking search button: ${error}`)
+            throw error
+        }
+    }
+
+    // click wish list button
+    async clickWishListBtn(){
+        try{
+            await this.btnWishList.click()
+        }catch(error){
+            console.log(`Exception occurred while clicking wish list button: ${error}`)
+            throw error
+        }
+    }
+
+    // click "Order History" link
+    async clickOrderHistory(){
+        try{
+            await this.linkOrderHistory.click()
+        }catch(error){
+            console.log(`Exception occurred while clicking 'Order History': ${error}`)
+            throw error
+        }
+    }
+
+    // click "Trasanction" link
+    async clickTrasanction(){
+        try{
+            await this.linkTrasanction.click()
+        }catch(error){
+            console.log(`Exception occurred while clicking 'Trasanction': ${error}`)
+            throw error
+        }
+    }
+
+    // click "Downloads" link
+    async clickDownloads(){
+        try{
+            await this.linkDownload.click()
+        }catch(error){
+            console.log(`Exception occurred while clicking 'Downloads': ${error}`)
+            throw error
+        }
+    }
+
+    // click "Logout" link
+    async clickLogout(){
+        try{
+            await this.linkLogout.click()
+        }catch(error){
+            console.log(`Exception occurred while clicking 'Logout': ${error}`)
             throw error
         }
     }

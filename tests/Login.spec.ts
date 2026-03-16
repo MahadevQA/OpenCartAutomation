@@ -24,7 +24,7 @@ test.afterEach(async({page})=>{
 })
 
 
-test("User login test",{tag:['@master','@sanity','@regression']}, async()=>{
+test("User login with valid test data",{tag:['@master','@sanity','@regression']}, async()=>{
 
     //Go to Login page
     await homePage.clickMyAccount()
@@ -38,4 +38,19 @@ test("User login test",{tag:['@master','@sanity','@regression']}, async()=>{
     // Verify user should be logged in 
     const isloggedIn = await myAccountPage.isMyAccountPageExist()
     expect(isloggedIn).toBeTruthy()
+})
+
+test("User login with Invalid test data",{tag:['@master','@sanity','@regression']}, async()=>{
+
+    //Go to Login page
+    await homePage.clickMyAccount()
+    await homePage.clickLogin()
+
+    // Enter valid data and log in
+    await loginPage.enterEmail(config.invalidemail)
+    await loginPage.enterPassword(config.invalidpassword)
+    await loginPage.clickLoginBtn()
+
+    // Verify error message should be display
+    expect(await loginPage.getLoginErrorMessage()).toContain("Warning: No match for E-Mail Address and/or Password.")
 })
