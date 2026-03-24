@@ -1,0 +1,3 @@
+Default product names: Apple Cinema 30",Canon EOS 5D,HP LP3065,HTC Touch HD,iPhone,iPod Classic,MacBook,MacBook Air,Palm Treo Pro,Product 8,Samsung SyncMaster 941BW,Sony VAIO
+Sorted product names: Apple Cinema 30",Canon EOS 5D,HP LP3065,HTC Touch HD,iPhone,iPod Classic,MacBook,MacBook Air,Palm Treo Pro,Product 8,Samsung SyncMaster 941BW,Sony VAIO
+true

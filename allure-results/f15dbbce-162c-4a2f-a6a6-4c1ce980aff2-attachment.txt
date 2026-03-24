@@ -1,0 +1,20 @@
+[
+  'Apple Cinema 30"',
+  'Canon EOS 5D',
+  'HP LP3065',
+  'HTC Touch HD',
+  'iPhone',
+  'iPod Classic',
+  'MacBook',
+  'MacBook Air',
+  'Palm Treo Pro',
+  'Product 8',
+  'Samsung SyncMaster 941BW',
+  'Sony VAIO'
+]
+Promise {
+  <pending>,
+  [Symbol(async_id_symbol)]: 9542,
+  [Symbol(trigger_async_id_symbol)]: 6857,
+  [Symbol(kResourceStore)]: undefined
+}

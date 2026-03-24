@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1507","User login with Invalid test data","chromium","2026-03-16","passed","2026-03-16","","Login.spec.ts","",""
+"","1632","User login with valid test data","chromium","2026-03-16","passed","2026-03-16","","Login.spec.ts","",""
+"","972","Verify Grid Functionality after search","chromium","2026-03-16","passed","2026-03-16","","SearchProduct.spec.ts","",""
+"","2064","User Registartion test","chromium","2026-03-16","passed","2026-03-16","","AccountRegistration.spec.ts","",""
+"","903","Verify List Functionality after search","chromium","2026-03-16","passed","2026-03-16","","SearchProduct.spec.ts","",""
