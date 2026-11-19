@@ -2,6 +2,10 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   timeout: 30 * 1000,
+  expect:{
+    timeout:5000
+  },
+  // globalTimeout:4000,
   testDir: './tests',
   fullyParallel: true, 
   //retries: process.env.CI ? 2 : 0,
@@ -17,7 +21,8 @@ export default defineConfig({
   ],
    
   use: {
-    baseURL: 'https://tutorialsninja.com/demo/',
+    // baseURL: 'https://tutorialsninja.com/demo/',
+    baseURL: "https://demo.playwright.dev/api-mocking",
     trace: 'on-first-retry',
     screenshot: 'on-first-failure',
     video: 'retain-on-failure',
@@ -25,6 +30,8 @@ export default defineConfig({
     viewport: {width:1280, height:720},  // Set default viewport size for consistency
     ignoreHTTPSErrors: true,   // Ignore SSL errors if necessary
     permissions: ['geolocation'],  // Set necessary permission for geolocation-based tests
+    // actionTimeout:5000,
+    // navigationTimeout:5000
   },
 
   //grep:/@master/,
@@ -44,4 +51,4 @@ export default defineConfig({
  * allure generate ./allure-results -o ./allure-report --clean
  * allure generate ./allure-results -o ./allure-report
  * allure open ./allure-report
- */
+ **/

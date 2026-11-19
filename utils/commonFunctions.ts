@@ -17,4 +17,12 @@ export class commonFunctions {
   ) {
     await locator.selectOption({ label: option });
   }
+
+  static getRandomElementFromArray<T>(items: T[]): T
+  {
+    const randomIndex = Math.floor(Math.random() * items.length)
+    return items[randomIndex];
+
+
+ }
 }
